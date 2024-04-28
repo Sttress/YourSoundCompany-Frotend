@@ -1,0 +1,37 @@
+.container-login-general{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container-box-login-general{
+  background-color: #403F3F;
+  min-width: 320px;
+  border-radius: 10px;
+  max-width: 400px;
+}
+.form{
+  padding: 15px;
+}
+.form .row{
+  margin-top:10px;
+}
+.form span{
+  color: #FFF;
+  min-width: 270px;
+  display: flex;
+}
+
+.form a{
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+}
+.create-account-link{
+  display: inline-flex;
+}
+.login-title{
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+}

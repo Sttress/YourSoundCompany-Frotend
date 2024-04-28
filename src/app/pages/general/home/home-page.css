@@ -1,0 +1,19 @@
+
+.container-header-home{
+  border: 7px;
+  margin-top:20px;
+}
+.container-header-home .btn{
+  margin: 10px;
+}
+.container-title-home{
+  text-align: center;
+}
+.container-body-home{
+  width: 80%;
+  margin-top: 40px;
+}
+
+.img-body{
+  max-width: 100%;
+}

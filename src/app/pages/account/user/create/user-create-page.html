@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="container-user-create-general">
+    <div class="row">
+      <div class="container container-box-form">
+        <div class="user-create-title  mt-3">
+          <h2>Cadastre-se</h2>
+        </div>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form" >
+          <div class="row">
+            <input type="text"
+            formControlName="email"
+            id="email"
+            class="form-control mt-5"
+            placeholder="Email"
+            required
+            />
+            <div
+            *ngIf="email?.hasError('required') && email?.touched"
+            class="alert alert-danger mt-2"
+            >
+            Email é obrigatório
+            </div>
+            <div
+            *ngIf="email?.hasError('email') && email?.touched "
+            class="alert alert-danger mt-2"
+            >
+            Email não é valido
+            </div>
+          </div>
+          <div class="row">
+            <input type="text"
+            formControlName="name"
+            id="name"
+            class="form-control mt-2"
+            placeholder="Nome ou Apelido"
+            required />
+            <div
+            *ngIf="name?.hasError('required') && name?.touched"
+            class="alert alert-danger mt-2"
+            >
+              Nome é obrigatório
+            </div>
+          </div>
+          <div class="row">
+            <input type="password"
+            formControlName="password"
+            id="password"
+            class="form-control mt-2"
+            placeholder="Senha"
+            required />
+            <div
+            *ngIf="password?.hasError('required') && password?.touched"
+            class="alert alert-danger mt-2"
+            >
+              Senha é obrigatória
+            </div>
+          </div>
+          <div class="row">
+            <input type="password"
+            formControlName="confirmPassword"
+            id="confirmPassword"
+            class="form-control mt-2"
+            placeholder="Confirmacão Senha"
+            required />
+            <div
+            *ngIf="confirmPassword?.hasError('required') && confirmPassword?.touched"
+            class="alert alert-danger mt-2"
+            >
+              Confirmação de senha é obrigatória
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-success mt-3 ml-2 spotify-button" (click)="getAuthorizationSpotify()">
+              Conectar Spotify
+              </button>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary"
+              (click)="onSubmit()">
+              Criar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

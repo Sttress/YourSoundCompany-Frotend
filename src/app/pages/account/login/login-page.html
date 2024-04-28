@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="container-login-general">
+    <div class="row">
+      <div class="container container-box-login-general">
+        <div class="login-title mt-3">
+          <h2>Entrar no YSC</h2>
+        </div>
+        <form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <input type="text"
+            formControlName="email"
+            id="email"
+            class="form-control mt-5"
+            placeholder="Email"
+            required
+            />
+            <div
+            *ngIf="email?.hasError('required') && email?.touched"
+            class="alert alert-danger mt-2"
+            >
+            Email é obrigatório
+            </div>
+            <div
+            *ngIf="email?.hasError('email') && email?.touched "
+            class="alert alert-danger mt-2"
+            >
+            Email não é valido
+            </div>
+          </div>
+          <div class="row">
+            <input type="password"
+            formControlName="password"
+            id="password"
+            class="form-control mt-2"
+            placeholder="Senha"
+            required />
+            <div
+            *ngIf="password?.hasError('required') && password?.touched"
+            class="alert alert-danger mt-2"
+            >
+              Senha é obrigatória
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10 mt-2">
+              <a routerLink="/">Esqueceu a senha ?</a>
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary mt-3"
+            (click)="onSubmit()">
+            Entrar
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-10 mt-2 create-account-link" >
+              <span>Não tem uma conta?<a [routerLink]="['/user-create']">Crie uma conta</a></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
